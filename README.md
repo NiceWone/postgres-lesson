@@ -1,16 +1,14 @@
 # postgres-lesson
 
--------------
-VM
+## VM
 ssh nicewone@62.84.120.108
--------------
-DB
+## DB
 psql -h 62.84.120.108 -U postgres -W
--------------
 
--------------
-HomeWork
---- 1
+
+# HomeWork
+## Task 1
+```
 postgres=# \c thai
 You are now connected to database "thai" as user "postgres".
 thai=# select count(*) from thai.book.tickets;
@@ -24,4 +22,5 @@ thai=# select count(*) from book.ride;
 --------
  144000
 (1 row)
---- 2
+```
+## Task 2
