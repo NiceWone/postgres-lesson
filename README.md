@@ -11,16 +11,17 @@ psql -h 62.84.120.108 -U postgres -W
 -------------
 HomeWork
 --- 1
-lesson=> select count(*) from book.tickets;
+postgres=# \c thai
+You are now connected to database "thai" as user "postgres".
+thai=# select count(*) from thai.book.tickets;
   count  
 ---------
  5185505
 (1 row)
 
-lesson=> select count(*)
-lesson-> from book.ride;
+thai=# select count(*) from book.ride;
  count  
 --------
  144000
 (1 row)
----
+--- 2
