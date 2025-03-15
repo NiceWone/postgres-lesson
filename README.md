@@ -1,6 +1,9 @@
 # postgres-lesson
 
+VM
 ssh nicewone@62.84.120.108
+DB
+psql -h 62.84.120.108 -U postgres -W
 
 -------------
 HomeWork
