@@ -1,11 +1,15 @@
 # postgres-lesson
 
 ## VM
+```
 ssh nicewone@62.84.120.108
 sudo su postgres
+```
 ## DB
+```
 psql -h 62.84.120.108 -U postgres -W
-
+\c thai
+```
 
 # HomeWork
 ## Task 1
