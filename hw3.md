@@ -1,7 +1,7 @@
 1. Создать таблицу с текстовым полем и заполнить случайными или сгенерированными данным в размере 1 млн строк
   
 ```sql
-  create table if not exists hw3
+create table if not exists hw3
 (
     text_filed text
 );
