@@ -1,6 +1,6 @@
 1. Создать таблицу с текстовым полем и заполнить случайными или сгенерированными данным в размере 1 млн строк
   
-```
+```sql
   create table if not exists hw3
 (
     text_filed text
@@ -11,7 +11,7 @@ FROM generate_series(1, 1000000);
 ```
 
 2. Посмотреть размер файла с таблицей
-```sql
+```sql 
 select table_name,
      pg_size_pretty(pg_total_relation_size(quote_ident(table_name))),
      (pg_total_relation_size(quote_ident(table_name)))
