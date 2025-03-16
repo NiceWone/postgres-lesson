@@ -48,3 +48,10 @@ thai=# select count(*) from book.ride;
 20. видите ли вы новую запись и если да то почему?
 - не вижу, в рамках repeatable read в пг не видно из другой сессии
 ```
+## Task 3
+
+## Task 4
+
+## Task 5
+
+## Task 6
