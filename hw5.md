@@ -1,9 +1,9 @@
 Протестироватþ падение производителþности при исполþзовании pgbouncer в разнýх
 режимах: statement, transaction, session
 
-postgres no bouncer :
+postgres no bouncer socket:
 ```
-nicewone@compute-vm-2-2-10-ssd-1742116359493:~$ sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 8 -j 4 -T 10 -f ~/workload.sql -n thai
+sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 8 -j 4 -T 10 -f ~/workload.sql -n thai
 pgbench (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
 transaction type: /home/nicewone/workload.sql
 scaling factor: 1
@@ -19,30 +19,12 @@ initial connection time = 12.799 ms
 tps = 1757.845374 (without initial connection time)
 ```
 
-postgres no bouncer 100 coonections : 
+postgres no bouncer 100 coonections socket: 
 ```
-nicewone@compute-vm-2-2-10-ssd-1742116359493:~$ sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 100 -j 4 -T 10 -f ~/workload.sql -n thai
+sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 100 -j 4 -T 10 -f ~/workload.sql -n thai
 pgbench (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
 pgbench: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  sorry, too many clients already
 pgbench: error: could not create connection for client 99
-```
-
-postgres no bouncer socket:
-```
-sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 8 -j 4 -T 10 -f ~/workload.sql -n  thai
-pgbench (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
-transaction type: /home/nicewone/workload.sql
-scaling factor: 1
-query mode: simple
-number of clients: 8
-number of threads: 4
-maximum number of tries: 1
-duration: 10 s
-number of transactions actually processed: 17999
-number of failed transactions: 0 (0.000%)
-latency average = 4.445 ms
-initial connection time = 12.338 ms
-tps = 1799.900000 (without initial connection time)
 ```
 
 postgres no bouncer web:
