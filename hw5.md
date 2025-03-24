@@ -101,3 +101,60 @@ latency average = 1.002 ms
 initial connection time = 105.079 ms
 tps = 7984.106963 (without initial connection time)
 ```
+
+postgres bouncer web (pool_mode=transaction):
+```
+sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 50 -j 5 -T 10 -f ~/workload.sql -n -p 6432 -h localhost thai
+Password: 
+pgbench (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+transaction type: /home/nicewone/workload.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 5
+maximum number of tries: 1
+duration: 10 s
+number of transactions actually processed: 68436
+number of failed transactions: 0 (0.000%)
+latency average = 6.836 ms
+initial connection time = 650.223 ms
+tps = 7314.659696 (without initial connection time)
+```
+
+postgres bouncer web (pool_mode=statement):
+```
+sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 50 -j 5 -T 10 -f ~/workload.sql -n -p 6432 -h localhost thai
+Password: 
+pgbench (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+transaction type: /home/nicewone/workload.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 5
+maximum number of tries: 1
+duration: 10 s
+number of transactions actually processed: 66902
+number of failed transactions: 0 (0.000%)
+latency average = 6.992 ms
+initial connection time = 650.703 ms
+tps = 7151.362016 (without initial connection time)
+```
+
+postgres bouncer web (pool_mode=session):
+```
+sudo -u postgres /usr/lib/postgresql/16/bin/pgbench -c 50 -j 5 -T 10 -f ~/workload.sql -n -p 6432 -h localhost thai
+Password: 
+pgbench (16.8 (Ubuntu 16.8-0ubuntu0.24.04.1))
+transaction type: /home/nicewone/workload.sql
+scaling factor: 1
+query mode: simple
+number of clients: 50
+number of threads: 5
+maximum number of tries: 1
+duration: 10 s
+number of transactions actually processed: 77258
+number of failed transactions: 0 (0.000%)
+latency average = 6.054 ms
+initial connection time = 658.212 ms
+tps = 8258.426384 (without initial connection time)
+```
