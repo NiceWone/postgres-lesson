@@ -2,14 +2,15 @@
 развернуть и подключиться через localhost):
 
 Развернул на 2-х отдельных вм в ЯО
-
+```
 51.250.110.75
 10.129.0.7
 51.250.23.131
 10.129.0.11
 ssh nicewone@51.250.110.75
 ssh nicewone@51.250.23.131
-
+```
+```
 sudo su postgres 
 cd ~
 cat >> /etc/postgresql/17/main/postgresql.conf << EOL
@@ -21,8 +22,10 @@ EOL
 cat >> ~/.pgpass << EOL
 10.129.0.11:5432:*:replicator:Erdfcvq1w2e3
 EOL
-
+```
+```
 pg_basebackup -h 10.129.0.11 -p 5432 -U replicator -R -S test -D /var/lib/postgresql/17/main
+```
 ```
 /usr/lib/postgresql/17/bin/pgbench -c 8 -j 4 -T 10 -f ~/workload2.sql -n -U postgres -p 5432 thai
 -- tps = 1176.214659 
