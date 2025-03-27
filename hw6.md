@@ -42,5 +42,6 @@ pg_ctlcluster 17 main start
 ```
 ALTER SYSTEM SET synchronous_commit='off';
 pg_ctlcluster 17 main reload
+```
 -- tps = 7232.666684 (without initial connection time)
 ```
